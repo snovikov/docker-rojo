@@ -13,5 +13,7 @@ Build your project
 
 ```bash
 cd ~/your-project
-docker run --rm -it -v ${PWD}:/app:rw -w /app sadsamurai/rojo rojo build --output project.rbxlx
+docker run --rm -it -u $(id -u):$(id -g) \
+  -v ${PWD}:/app:rw -w /app sadsamurai/rojo \
+  rojo build --output project.rbxlx
 ```
